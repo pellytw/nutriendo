@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  numero: 1
+  nombre: MyString
+  localidad_id: 1
+  nivel_id: 1
+  jornada_id: 1
+
+two:
+  numero: 1
+  nombre: MyString
+  localidad_id: 1
+  nivel_id: 1
+  jornada_id: 1

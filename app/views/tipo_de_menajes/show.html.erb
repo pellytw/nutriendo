@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nombre:</b>
+  <%= @tipo_de_menaje.nombre %>
+</p>
+
+<p>
+  <b>Descripcion:</b>
+  <%= @tipo_de_menaje.descripcion %>
+</p>
+
+
+<%= link_to 'Edit', edit_tipo_de_menaje_path(@tipo_de_menaje) %> |
+<%= link_to 'Back', tipo_de_menajes_path %>

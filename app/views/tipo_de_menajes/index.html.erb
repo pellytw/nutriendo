@@ -1,0 +1,25 @@
+<h1>Listing tipo_de_menajes</h1>
+
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Descripcion</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @tipo_de_menajes.each do |tipo_de_menaje| %>
+  <tr>
+    <td><%= tipo_de_menaje.nombre %></td>
+    <td><%= tipo_de_menaje.descripcion %></td>
+    <td><%= link_to 'Show', tipo_de_menaje %></td>
+    <td><%= link_to 'Edit', edit_tipo_de_menaje_path(tipo_de_menaje) %></td>
+    <td><%= link_to 'Destroy', tipo_de_menaje, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Tipo de menaje', new_tipo_de_menaje_path %>

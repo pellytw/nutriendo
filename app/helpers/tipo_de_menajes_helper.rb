@@ -1,0 +1,2 @@
+module TipoDeMenajesHelper
+end

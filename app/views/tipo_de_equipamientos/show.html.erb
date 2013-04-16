@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nombre:</b>
+  <%= @tipo_de_equipamiento.nombre %>
+</p>
+
+<p>
+  <b>Descripcion:</b>
+  <%= @tipo_de_equipamiento.descripcion %>
+</p>
+
+
+<%= link_to 'Edit', edit_tipo_de_equipamiento_path(@tipo_de_equipamiento) %> |
+<%= link_to 'Back', tipo_de_equipamientos_path %>

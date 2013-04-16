@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Escuela:</b>
+  <%= @inventario_equipamiento.escuela_id %>
+</p>
+
+<p>
+  <b>Ultima modificacion:</b>
+  <%= @inventario_equipamiento.ultima_modificacion %>
+</p>
+
+<p>
+  <b>Quien modifica:</b>
+  <%= @inventario_equipamiento.quien_modifica %>
+</p>
+
+
+<%= link_to 'Edit', edit_inventario_equipamiento_path(@inventario_equipamiento) %> |
+<%= link_to 'Back', inventario_equipamientos_path %>
