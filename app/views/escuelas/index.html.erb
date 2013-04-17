@@ -1,6 +1,6 @@
-<h1>Listing escuelas</h1>
+<h1>Listado de escuelas</h1>
 
-<table>
+<table class="table table-stripped">
   <tr>
     <th>Numero</th>
     <th>Nombre</th>
@@ -16,16 +16,16 @@
   <tr>
     <td><%= escuela.numero %></td>
     <td><%= escuela.nombre %></td>
-    <td><%= escuela.localidad_id %></td>
-    <td><%= escuela.nivel_id %></td>
-    <td><%= escuela.jornada_id %></td>
-    <td><%= link_to 'Show', escuela %></td>
-    <td><%= link_to 'Edit', edit_escuela_path(escuela) %></td>
-    <td><%= link_to 'Destroy', escuela, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= escuela.localidad %></td>
+    <td><%= escuela.nivel %></td>
+    <td><%= escuela.jornada %></td>
+    <td><%= link_to 'Ver', escuela, :class => "btn btn-info" %></td>
+    <td><%= link_to 'Editar', edit_escuela_path(escuela), :class =>  "btn btn-primary" %></td>
+    <td><%= link_to 'Eliminar', escuela, method: :delete, data: { confirm: 'Seguro desea eliminar?' }, :class =>  "btn btn-danger" %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Escuela', new_escuela_path %>
+<%= link_to 'Nueva Escuela', new_escuela_path, :class =>  "btn btn-success" %>

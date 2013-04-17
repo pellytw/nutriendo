@@ -1,15 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  fecha_de_alta: 2013-04-16
+  fecha_de_alta: 2013-04-17
   cantidad: MyString
-  user_id: 1
+  user: 1
   inventario_equipamiento_id: 1
   tipo_de_equipamiento_id: 1
+  quien_modifica: 1
 
 two:
-  fecha_de_alta: 2013-04-16
+  fecha_de_alta: 2013-04-17
   cantidad: MyString
-  user_id: 1
+  user: 1
   inventario_equipamiento_id: 1
   tipo_de_equipamiento_id: 1
+  quien_modifica: 1

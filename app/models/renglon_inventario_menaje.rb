@@ -1,3 +1,3 @@
 class RenglonInventarioMenaje < ActiveRecord::Base
-  attr_accessible :cantidad, :fecha_de_alta, :inventario_menaje_id, :tipo_de_menaje_id, :user_id
+  attr_accessible :cantidad, :fecha_de_alta, :inventario_equipamiento_id, :quien_modifica, :tipo_de_equipamiento_id, :user
 end

@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :numero %><br />
-    <%= f.number_field :numero %>
+    <%= f.text_field :numero %>
   </div>
   <div class="field">
     <%= f.label :nombre %><br />
@@ -21,15 +21,15 @@
   </div>
   <div class="field">
     <%= f.label :localidad_id %><br />
-    <%= f.number_field :localidad_id %>
+    <%= f.grouped_collection_select(:localidad_id, Region.all, :localidad, :nombre, :id, :nombre) %>
   </div>
   <div class="field">
     <%= f.label :nivel_id %><br />
-    <%= f.number_field :nivel_id %>
+    <%= f.collection_select :nivel_id, Nivel.all, :id, :nombre %>
   </div>
   <div class="field">
     <%= f.label :jornada_id %><br />
-    <%= f.number_field :jornada_id %>
+    <%= f.collection_select :jornada_id, Jornada.all, :id, :nombre %>
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -1,8 +1,12 @@
 <p id="notice"><%= notice %></p>
 
+<% @escuela = Escuela.where(:id => @inventario_equipamiento.escuela_id).first %>
+
+<p><h2>Inventario Escuela <%= @inventario_equipamiento.escuela %> - <%= @escuela.localidad %></h2></p>
+
 <p>
   <b>Escuela:</b>
-  <%= @inventario_equipamiento.escuela_id %>
+  <%= @inventario_equipamiento.escuela %>
 </p>
 
 <p>
@@ -10,11 +14,9 @@
   <%= @inventario_equipamiento.ultima_modificacion %>
 </p>
 
-<p>
-  <b>Quien modifica:</b>
-  <%= @inventario_equipamiento.quien_modifica %>
-</p>
 
+<a href="" class="btn btn-success"> Agregar Inventario Equipamiento</a></br></br>
+<a href="" class="btn btn-success"> Agregar Inventario Menaje</a></br></br>
 
-<%= link_to 'Edit', edit_inventario_equipamiento_path(@inventario_equipamiento) %> |
-<%= link_to 'Back', inventario_equipamientos_path %>
+<%= link_to 'Editar', edit_inventario_equipamiento_path(@inventario_equipamiento) %> |
+<%= link_to 'Volver', inventario_equipamientos_path %>

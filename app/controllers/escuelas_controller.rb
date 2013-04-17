@@ -44,6 +44,10 @@ class EscuelasController < ApplicationController
 
     respond_to do |format|
       if @escuela.save
+        @inventarioEquipamiento = InventarioEquipamiento.create(:escuela_id => @escuela.id, :ultima_modificacion => Date.today)
+        @inventarioEquipamiento.save
+        @inventarioMenaje = InventarioMenaje.create(:escuela_id => @escuela.id, :ultima_modificacion => Date.today)
+        @inventarioMenaje.save
         format.html { redirect_to @escuela, notice: 'Escuela was successfully created.' }
         format.json { render json: @escuela, status: :created, location: @escuela }
       else
@@ -73,7 +77,7 @@ class EscuelasController < ApplicationController
   # DELETE /escuelas/1.json
   def destroy
     @escuela = Escuela.find(params[:id])
-    @escuela.destroy
+    @escuela.destroy    
 
     respond_to do |format|
       format.html { redirect_to escuelas_url }

@@ -1,11 +1,11 @@
 Mysecurity::Application.routes.draw do
-  resources :tipo_de_menajes
-
-  resources :tipo_de_equipamientos
-
   resources :inventario_menajes
 
   resources :inventario_equipamientos
+
+  resources :tipo_de_menajes
+
+  resources :tipo_de_equipamientos
 
   resources :escuelas
 

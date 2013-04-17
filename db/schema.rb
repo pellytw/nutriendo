@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130416115336) do
+ActiveRecord::Schema.define(:version => 20130417122428) do
 
   create_table "escuelas", :force => true do |t|
     t.integer  "numero"
@@ -26,7 +26,6 @@ ActiveRecord::Schema.define(:version => 20130416115336) do
   create_table "inventario_equipamientos", :force => true do |t|
     t.integer  "escuela_id"
     t.date     "ultima_modificacion"
-    t.integer  "quien_modifica"
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
   end
@@ -34,7 +33,6 @@ ActiveRecord::Schema.define(:version => 20130416115336) do
   create_table "inventario_menajes", :force => true do |t|
     t.integer  "escuela_id"
     t.date     "ultima_modificacion"
-    t.integer  "quien_modifica"
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
   end
@@ -67,9 +65,10 @@ ActiveRecord::Schema.define(:version => 20130416115336) do
   create_table "renglon_inventario_equipamientos", :force => true do |t|
     t.date     "fecha_de_alta"
     t.string   "cantidad"
-    t.integer  "user_id"
+    t.integer  "user"
     t.integer  "inventario_equipamiento_id"
     t.integer  "tipo_de_equipamiento_id"
+    t.integer  "quien_modifica"
     t.datetime "created_at",                 :null => false
     t.datetime "updated_at",                 :null => false
   end
@@ -77,11 +76,12 @@ ActiveRecord::Schema.define(:version => 20130416115336) do
   create_table "renglon_inventario_menajes", :force => true do |t|
     t.date     "fecha_de_alta"
     t.string   "cantidad"
-    t.integer  "user_id"
-    t.integer  "inventario_menaje_id"
-    t.integer  "tipo_de_menaje_id"
-    t.datetime "created_at",           :null => false
-    t.datetime "updated_at",           :null => false
+    t.integer  "user"
+    t.integer  "inventario_equipamiento_id"
+    t.integer  "tipo_de_equipamiento_id"
+    t.integer  "quien_modifica"
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
   end
 
   create_table "role_permissions", :force => true do |t|

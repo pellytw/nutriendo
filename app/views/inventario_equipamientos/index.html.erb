@@ -1,10 +1,9 @@
 <h1>Listing inventario_equipamientos</h1>
 
-<table>
+<table class="table table-stripped">
   <tr>
     <th>Escuela</th>
     <th>Ultima modificacion</th>
-    <th>Quien modifica</th>
     <th></th>
     <th></th>
     <th></th>
@@ -14,10 +13,9 @@
   <tr>
     <td><%= inventario_equipamiento.escuela_id %></td>
     <td><%= inventario_equipamiento.ultima_modificacion %></td>
-    <td><%= inventario_equipamiento.quien_modifica %></td>
-    <td><%= link_to 'Show', inventario_equipamiento %></td>
-    <td><%= link_to 'Edit', edit_inventario_equipamiento_path(inventario_equipamiento) %></td>
-    <td><%= link_to 'Destroy', inventario_equipamiento, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Ver', inventario_equipamiento %></td>
+    <td><%= link_to 'Editar', edit_inventario_equipamiento_path(inventario_equipamiento) %></td>
+    <td><%= link_to 'Eliminar', inventario_equipamiento, method: :delete, data: { confirm: 'Seguro desear eliminar?' } %></td>
   </tr>
 <% end %>
 </table>

@@ -18,7 +18,7 @@ class InventarioMenajesControllerTest < ActionController::TestCase
 
   test "should create inventario_menaje" do
     assert_difference('InventarioMenaje.count') do
-      post :create, inventario_menaje: { escuela_id: @inventario_menaje.escuela_id, quien_modifica: @inventario_menaje.quien_modifica, ultima_modificacion: @inventario_menaje.ultima_modificacion }
+      post :create, inventario_menaje: { escuela_id: @inventario_menaje.escuela_id, ultima_modificacion: @inventario_menaje.ultima_modificacion }
     end
 
     assert_redirected_to inventario_menaje_path(assigns(:inventario_menaje))
@@ -35,7 +35,7 @@ class InventarioMenajesControllerTest < ActionController::TestCase
   end
 
   test "should update inventario_menaje" do
-    put :update, id: @inventario_menaje, inventario_menaje: { escuela_id: @inventario_menaje.escuela_id, quien_modifica: @inventario_menaje.quien_modifica, ultima_modificacion: @inventario_menaje.ultima_modificacion }
+    put :update, id: @inventario_menaje, inventario_menaje: { escuela_id: @inventario_menaje.escuela_id, ultima_modificacion: @inventario_menaje.ultima_modificacion }
     assert_redirected_to inventario_menaje_path(assigns(:inventario_menaje))
   end
 

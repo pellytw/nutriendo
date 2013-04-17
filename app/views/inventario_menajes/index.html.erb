@@ -4,7 +4,6 @@
   <tr>
     <th>Escuela</th>
     <th>Ultima modificacion</th>
-    <th>Quien modifica</th>
     <th></th>
     <th></th>
     <th></th>
@@ -14,7 +13,6 @@
   <tr>
     <td><%= inventario_menaje.escuela_id %></td>
     <td><%= inventario_menaje.ultima_modificacion %></td>
-    <td><%= inventario_menaje.quien_modifica %></td>
     <td><%= link_to 'Show', inventario_menaje %></td>
     <td><%= link_to 'Edit', edit_inventario_menaje_path(inventario_menaje) %></td>
     <td><%= link_to 'Destroy', inventario_menaje, method: :delete, data: { confirm: 'Are you sure?' } %></td>

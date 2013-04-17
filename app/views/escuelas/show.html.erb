@@ -12,19 +12,19 @@
 
 <p>
   <b>Localidad:</b>
-  <%= @escuela.localidad_id %>
+  <%= @escuela.localidad %>
 </p>
 
 <p>
   <b>Nivel:</b>
-  <%= @escuela.nivel_id %>
+  <%= @escuela.nivel %>
 </p>
 
 <p>
   <b>Jornada:</b>
-  <%= @escuela.jornada_id %>
+  <%= @escuela.jornada %>
 </p>
 
 
-<%= link_to 'Edit', edit_escuela_path(@escuela) %> |
-<%= link_to 'Back', escuelas_path %>
+<%= link_to 'Editar', edit_escuela_path(@escuela), :class => "btn" %> |
+<%= link_to 'Volver', escuelas_path, :class => "btn" %>
