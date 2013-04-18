@@ -81,10 +81,15 @@ class InventarioEquipamientosController < ApplicationController
     end
   end
 
-  def agregar_renglon_inventario_equipamientos
-
-    
-
+  def listado_escuela
+    if params["idEscuela"] then
+      @escuela = Escuela.find(params["idEscuela"].to_i)
+      @inventario_equipamientos = InventarioEquipamiento.where(:escuela_id => params["idEscuela"].to_i)
+    end
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @inventario_equipamientos }
+    end    
   end
 
 

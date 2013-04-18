@@ -19,8 +19,8 @@ Mysecurity::Application.routes.draw do
     resources :users
 
 
-  match 'inventario_equipamientos/agregar_renglon_inventario_equipamientos' => 'inventario_equipamientos#agregar_renglon_inventario_equipamientos'
-  match 'inventario_equipamientos/agregar_renglon_inventario_equipamientos/:id_inventario_equipamientos' => 'inventario_equipamientos#agregar_renglon_inventario_equipamientos' 
+  match 'inventario_menajes/listado_escuela/:idEscuela' => 'inventario_menajes#listado_escuela'
+  match 'inventario_equipamientos/listado_escuela/:idEscuela' => 'inventario_equipamientos#listado_escuela' 
   
 
   # The priority is based upon order of creation:
