@@ -18,7 +18,7 @@
 <a href="#myModal" role="button" class="btn btn-success" data-toggle="modal">Agregar Inventario Equipamiento</a>
 
 
-<form action="<%= url_for :controller =>  "inventario_equipamientos", :action => "agregar_renglon_inventario_equipamientos" %>">
+<!-- <form action="<%= url_for :controller =>  "inventario_equipamientos", :action => "agregar_renglon_inventario_equipamientos" %>"> -->
 
     <!-- Modal -->
     <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -46,12 +46,15 @@
       </div>
       <div class="modal-footer">
         <button class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
-        <input type="submit" class="btn btn-primary" name="agregar renglon inventario equipamiento" value="Guardar">
+       <!--  <input type="submit" class="btn btn-primary" name="agregar renglon inventario equipamiento" value="Guardar"> -->
+        <a href="<%=url_for inventario_equipamientos_agregar_renglon_inventario_equipamientos_path%>/1/" ><i class="btn btn-primary">Guardar</i>
        <!--  <button class="btn btn-primary" type="submit" name="cargar renglon inventario equipamiento" >Guardar</button> -->
       </div>
     </div> 
 
-</form>
+<!-- </form> -->
+
+</br></br>
 
 <%= link_to 'Editar', edit_inventario_equipamiento_path(@inventario_equipamiento) %> |
 <%= link_to 'Volver', inventario_equipamientos_path %>
