@@ -84,7 +84,8 @@ class InventarioEquipamientosController < ApplicationController
   def listado_escuela
     if params["idEscuela"] then
       @escuela = Escuela.find(params["idEscuela"].to_i)
-      @inventario_equipamientos = InventarioEquipamiento.where(:escuela_id => params["idEscuela"].to_i)
+      @inventario_equipamientos = InventarioEquipamiento.where(:escuela_id => params["idEscuela"].to_i).first
+      @renglon_inventario_equipamiento = @inventario_equipamientos.renglon_inventario_equipamientos
     end
     respond_to do |format|
       format.html # index.html.erb
