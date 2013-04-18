@@ -80,4 +80,13 @@ class InventarioEquipamientosController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def agregar_renglon_inventario_equipamientos
+
+    debugger
+    @llego_aca = 0
+
+  end
+
+
 end
