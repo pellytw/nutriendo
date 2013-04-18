@@ -1,4 +1,4 @@
-<h1>Listing tipo_de_menajes</h1>
+<h1>Listado de tipo_de_menajes</h1>
 
 <table class="table table-stripped">
   <tr>
@@ -13,13 +13,13 @@
   <tr>
     <td><%= tipo_de_menaje.nombre %></td>
     <td><%= tipo_de_menaje.descripcion %></td>
-    <td><%= link_to 'Show', tipo_de_menaje %></td>
-    <td><%= link_to 'Edit', edit_tipo_de_menaje_path(tipo_de_menaje) %></td>
-    <td><%= link_to 'Destroy', tipo_de_menaje, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'ver', tipo_de_menaje %></td>
+    <td><%= link_to 'editar', edit_tipo_de_menaje_path(tipo_de_menaje) %></td>
+    <td><%= link_to 'eliminar', tipo_de_menaje, method: :delete, data: { confirm: 'Desea eliminar?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Tipo de menaje', new_tipo_de_menaje_path %>
+<%= link_to 'Agregar Tipo de menaje', new_tipo_de_menaje_path %>

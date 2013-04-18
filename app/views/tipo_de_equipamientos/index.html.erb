@@ -1,4 +1,4 @@
-<h1>Listing tipo_de_equipamientos</h1>
+<h1>Listado de tipo_de_equipamientos</h1>
 
 <table class="table table-stripped">
   <tr>
@@ -13,13 +13,13 @@
   <tr>
     <td><%= tipo_de_equipamiento.nombre %></td>
     <td><%= tipo_de_equipamiento.descripcion %></td>
-    <td><%= link_to 'Show', tipo_de_equipamiento %></td>
-    <td><%= link_to 'Edit', edit_tipo_de_equipamiento_path(tipo_de_equipamiento) %></td>
-    <td><%= link_to 'Destroy', tipo_de_equipamiento, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'ver', tipo_de_equipamiento %></td>
+    <td><%= link_to 'editar', edit_tipo_de_equipamiento_path(tipo_de_equipamiento) %></td>
+    <td><%= link_to 'eliminar', tipo_de_equipamiento, method: :delete, data: { confirm: 'Desea eliminar?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Tipo de equipamiento', new_tipo_de_equipamiento_path %>
+<%= link_to 'Agregar Tipo de equipamiento', new_tipo_de_equipamiento_path %>

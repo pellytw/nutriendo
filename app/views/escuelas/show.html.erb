@@ -1,30 +1,37 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="span12">
+    <p class="lead" align="center"><b>Escuela <%= @escuela.nombre %></b> N° <b><%= @escuela.numero %> de la localidad de </b> <%= @escuela.localidad %></p>
+    <div class="row">
+      <div class="span3">
+        <ul class="nav nav-list">
+          <li class="nav-header">Datos Escuela</li>
+          <li><%= link_to 'ver', @escuela %></li>
+          <li><%= link_to 'Editar', edit_escuela_path(@escuela) %></li>
+          <li class="nav-header">Menaje</li>
+            <li><a href="#">Ver Menaje</a></li>
+          <li class="nav-header">Equipamiento</li>
+            <li><a href="#">Ver Equipamiento</a></li>                  
+        </ul>
+      </div>
+      <div class="span9">
+          <p>
+            <b>Localidad:</b>
+            <%= @escuela.localidad %>
+          </p>
+          <p>
+            <b>Nivel:</b>
+            <%= @escuela.nivel %>
+          </p>
+          <p>
+            <b>Jornada:</b>
+            <%= @escuela.jornada %>
+          </p>
+          <%= link_to 'Volver', escuelas_path%>
+      </div>
+    </div>
+  </div>
+</div>
 
-<p>
-  <b>Numero:</b>
-  <%= @escuela.numero %>
-</p>
-
-<p>
-  <b>Nombre:</b>
-  <%= @escuela.nombre %>
-</p>
-
-<p>
-  <b>Localidad:</b>
-  <%= @escuela.localidad %>
-</p>
-
-<p>
-  <b>Nivel:</b>
-  <%= @escuela.nivel %>
-</p>
-
-<p>
-  <b>Jornada:</b>
-  <%= @escuela.jornada %>
-</p>
 
 
-<%= link_to 'Editar', edit_escuela_path(@escuela), :class => "btn" %> |
-<%= link_to 'Volver', escuelas_path, :class => "btn" %>
+

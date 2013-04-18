@@ -1,6 +1,25 @@
-<h1>Editing escuela</h1>
+<div class="row">
+  <div class="span12">
+    <p class="lead" align="center"><b>Escuela <%= @escuela.nombre %></b> N° <b><%= @escuela.numero %> de la localidad de </b> <%= @escuela.localidad %></p>
+    <div class="row">
+      <div class="span3">
+        <ul class="nav nav-list">
+          <li class="nav-header">Datos Escuela</li>
+          <li><%= link_to 'ver', @escuela %></li>
+          <li><%= link_to 'Editar', edit_escuela_path(@escuela) %></li>
+          <li class="nav-header">Menaje</li>
+          	<li><a href="#">Ver Menaje</a></li>
+          <li class="nav-header">Equipamiento</li>
+          	<li><a href="#">Ver Equipamiento</a></li>
+        </ul>
+      </div>
+      <div class="span9">
+       	<%= render 'form' %>
+          <%= link_to 'volver', escuelas_path%>
+      </div>
+  v  </div>
+  </div>
+</div>
 
-<%= render 'form' %>
 
-<%= link_to 'Show', @escuela %> |
-<%= link_to 'Back', escuelas_path %>
+
