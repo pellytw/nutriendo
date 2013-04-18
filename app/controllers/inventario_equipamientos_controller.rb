@@ -83,8 +83,7 @@ class InventarioEquipamientosController < ApplicationController
 
   def agregar_renglon_inventario_equipamientos
 
-    debugger
-    @llego_aca = 0
+    
 
   end
 
