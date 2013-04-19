@@ -18,23 +18,40 @@
             <tr>
               <th>Cantidad</th>
               <th>Tipo de equipamiento</th>
-              <th></th>
-              <th></th>
-              <th></th>
             </tr>
           <% @renglon_inventario_equipamiento.each do |rie| %>
             <tr>
               <td><%= rie.cantidad %></td>
               <td><%= rie.tipo_de_equipamiento %></td>
-              <td><%= link_to 'ver', inventario_equipamiento %></td>
-              <td><%= link_to 'editar', edit_inventario_equipamiento_path(inventario_equipamiento) %></td>
-              <td><%= link_to 'eliminar', inventario_equipamiento, method: :delete, data: { confirm: 'Seguro desear eliminar?' } %></td>
             </tr>
           <% end %>
           </table>
           <br />
-          <%= link_to 'Agregar equipamiento', new_inventario_equipamiento_path %>
+          <a href="#myModal" role="button" data-toggle="modal">Agregar equipamiento</a>
       </div>
    </div>
+  </div>
+</div>
+
+   
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Agregar Equipamiento al Inventario</h3>
+  </div>
+  <div class="modal-body">
+    <form action="<%=url_for :controller => "inventario_equipamientos", :action => "agregar_elemento_inventario"%>" >
+      <input type="hidden" id="idInventario" name="idInventario" value="<%=@inventario_equipamientos.id%>">
+      <input type="text" id="cantidad" name="cantidad" placeholder="cantidad" class="input-mini">
+      <select id="tipo_de_equipamiento" name="tipo_de_equipamiento">
+        <% TipoDeEquipamiento.all.each do |tde|%>
+          <option value="<%= tde.id %>"><%= tde %></option>
+        <% end %>
+      </select>
+      <input type="submit" value="agregar al inventario" class="btn btn-primary">
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Cancelar</button>
   </div>
 </div>

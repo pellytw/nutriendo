@@ -61,3 +61,5 @@ gem 'therubyracer'
 
 # To use debugger
 #gem 'debugger'
+#gem 'ruby-debug19'
+#gem 'debugger'

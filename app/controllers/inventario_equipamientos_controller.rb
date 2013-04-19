@@ -92,6 +92,23 @@ class InventarioEquipamientosController < ApplicationController
       format.json { render json: @inventario_equipamientos }
     end    
   end
-
+  def agregar_elemento_inventario
+    #debbuger
+    @inventario = params["idInventario"]
+    @tipo_de_equipamiento = params["tipo_de_equipamiento"]
+    @cantidad = params["cantidad"]
+    #RenglonInventarioEquipamiento(id: integer, fecha_de_alta: date, cantidad: string, user: integer, inventario_equipamiento_id: integer, tipo_de_equipamiento_id: integer, quien_modifica: integer, created_at: datetime, updated_at: datetime) 
+    RenglonInventarioEquipamiento.create(:cantidad => @cantidad.to_i, :user => current_user.id, :inventario_equipamiento_id => @inventario.to_i, :tipo_de_equipamiento_id => @tipo_de_equipamiento.to_i)
+    redirect_to :back
+  end
+  def quitar_elemento_inventario
+    
+  end
+  def ver_elemento_inventario
+    
+  end
+  def modificar_elemento_inventario
+    
+  end
 
 end
