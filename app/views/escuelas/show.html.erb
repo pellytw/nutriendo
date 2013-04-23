@@ -8,9 +8,9 @@
           <li><%= link_to 'ver', @escuela %></li>
           <li><%= link_to 'Editar', edit_escuela_path(@escuela) %></li>
           <li class="nav-header">Menaje</li>
-            <li><a href="#">Ver Menaje</a></li>
+            <li><a href="#">ver menaje</a></li>
           <li class="nav-header">Equipamiento</li>
-            <li><a href="#">Ver Equipamiento</a></li>                  
+            <li><a href="<%= url_for :controller => "inventario_equipamientos", :action => "listado_escuela", :idEscuela => @escuela.id %>">ver equipamiento</a></li>                  
         </ul>
       </div>
       <div class="span9">

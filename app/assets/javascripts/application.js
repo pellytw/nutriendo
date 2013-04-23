@@ -5,6 +5,8 @@
 // the compiled file.
 //
 //= require jquery
+//= require bootstrap-editable
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require allPages
+				

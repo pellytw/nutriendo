@@ -28,11 +28,11 @@ Mysecurity::Application.routes.draw do
   match 'inventario_equipamientos/inventarios/agregar_elemento_inventario' => 'inventario_equipamientos#agregar_elemento_inventario'
   #match 'inventario_equipamientos/inventarios/agregar_elemento_inventario/:idEscuela/:idInventario' => 'inventario_equipamientos#agregar_elemento_inventario'
   #Quitar un elemento (renglon_inventario_equipamiento) al inventario de una escuela
-  match 'inventario_equipamientos/inventarios/quitar_elemento_inventario/:idEscuela/:idInventario/:idElementoInventario' => 'inventario_equipamientos#quitar_elemento_inventario'
+  match 'inventario_equipamientos/inventarios/quitar_elemento_inventario/:idElementoInventario' => 'inventario_equipamientos#quitar_elemento_inventario'
   #Ver un elemento (renglon_inventario_equipamiento) al inventario de una escuela
   match 'inventario_equipamientos/inventarios/ver_elemento_inventario/:idEscuela/:idInventario/:idElementoInventario' => 'inventario_equipamientos#ver_elemento_inventario'
   #Modificar un elemento (renglon_inventario_equipamiento) al inventario de una escuela
-  match 'inventario_equipamientos/inventarios/modificar_elemento_inventario/:idEscuela/:idInventario/:idElementoInventario' => 'inventario_equipamientos#modificar_elemento_inventario'
+  match 'inventario_equipamientos/inventarios/modificar_elemento_inventario/' => 'inventario_equipamientos#modificar_elemento_inventario'
 
 
 
