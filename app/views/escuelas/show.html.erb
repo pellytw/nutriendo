@@ -6,9 +6,9 @@
         <ul class="nav nav-list">
           <li class="nav-header">Datos Escuela</li>
           <li><%= link_to 'ver', @escuela %></li>
-          <li><%= link_to 'Editar', edit_escuela_path(@escuela) %></li>
+          <li><%= link_to 'editar', edit_escuela_path(@escuela) %></li>
           <li class="nav-header">Menaje</li>
-            <li><a href="#">ver menaje</a></li>
+            <li><a href="<%= url_for :controller => "inventario_menajes", :action => "listado_escuela", :idEscuela => @escuela.id %>">ver Menaje</a></li>
           <li class="nav-header">Equipamiento</li>
             <li><a href="<%= url_for :controller => "inventario_equipamientos", :action => "listado_escuela", :idEscuela => @escuela.id %>">ver equipamiento</a></li>                  
         </ul>

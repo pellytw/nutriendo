@@ -12,7 +12,7 @@
 <% @localidads.each do |localidad| %>
   <tr>
     <td><%= localidad.nombre %></td>
-    <td><%= localidad.region_id %></td>
+    <td><%= localidad.region %></td>
     <td><%= link_to 'ver', localidad %></td>
     <td><%= link_to 'editar', edit_localidad_path(localidad) %></td>
     <td><%= link_to 'eliminar', localidad, method: :delete, data: { confirm: 'Desea eliminar?' } %></td>

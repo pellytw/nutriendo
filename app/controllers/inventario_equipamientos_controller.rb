@@ -93,7 +93,7 @@ class InventarioEquipamientosController < ApplicationController
     end    
   end
   def agregar_elemento_inventario
-    #debbuger
+    #debugger
     @inventario = params["idInventario"]
     @tipo_de_equipamiento = params["tipo_de_equipamiento"]
     @cantidad = params["cantidad"]
@@ -109,13 +109,23 @@ class InventarioEquipamientosController < ApplicationController
     redirect_to :back
   end
   def quitar_elemento_inventario
-    
+    #debugger
+    if params["idElementoInventario"] then
+      RenglonInventarioEquipamiento.find(params["idElementoInventario"].to_i).destroy
+    end
+    redirect_to :back
   end
   def ver_elemento_inventario
     
   end
   def modificar_elemento_inventario
-    
+    if params["pk"] and params["value"] then
+      rie = RenglonInventarioEquipamiento.find(params["pk"].to_i)
+      if rie then
+        rie.cantidad = params["value"].to_i
+        rie.save
+      end
+    end
   end
 
 end

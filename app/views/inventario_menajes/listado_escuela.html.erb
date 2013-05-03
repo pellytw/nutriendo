@@ -17,21 +17,21 @@
         <table class="table table-bordered table-striped">
             <tr>
               <th>Cantidad</th>
-              <th>Tipo de equipamiento</th>
+              <th>Tipo de Menaje</th>
               <th></th>
             </tr>
-          <% @renglon_inventario_equipamiento.each do |rie| %>
+          <% @renglon_inventario_menaje.each do |rim| %>
             <tr>
-              <td><a href="#" id="cantidad_<%= rie.id%>" name="cantidad" data-type="text" data-pk="<%=rie.id%>" data-url="<%= url_for :controller => "inventario_equipamientos", :action => "modificar_elemento_inventario" %>" name="cantidad" data-original-title="Ingrese cantidad"><%= rie.cantidad %></a>
+              <td><a href="#" id="cantidad_<%= rim.id%>" name="cantidad" data-type="text" data-pk="<%=rim.id%>" data-url="<%= url_for :controller => "inventario_menajes", :action => "modificar_elemento_inventario" %>" name="cantidad" data-original-title="Ingrese cantidad"><%= rim.cantidad %></a>
               </td>
-              <td><%= rie.tipo_de_equipamiento %></td>
-              <!--inventario_equipamientos#quitar_elemento_inventario-->
-              <td><a href="<%= url_for :controller => "inventario_equipamientos", :action => "quitar_elemento_inventario", :idElementoInventario => rie.id %>" onclick="return confirm('Realmente desea eliminar?')"> <span class="badge badge-important"> eliminar </span></a></td>
+              <td><%= rim.tipo_de_menaje %></td>
+              <!--inventario_menajes#quitar_elemento_inventario-->
+              <td><a href="<%= url_for :controller => "inventario_menajes", :action => "quitar_elemento_inventario", :idElementoInventario => rim.id %>" onclick="return confirm('Realmente desea eliminar?')"> <span class="badge badge-important"> eliminar </span></a></td>
             </tr>
           <% end %>
-          <% @renglon_inventario_equipamiento.each do |rie| %>
+          <% @renglon_inventario_menaje.each do |rim| %>
             <script type="text/javascript">
-               $('#cantidad_<%= rie.id%>').editable({
+               $('#cantidad_<%= rim.id%>').editable({
                   type: 'text',
                   pk: 1,
                   url: '#',
@@ -43,7 +43,7 @@
           </table>
           <br />
 
-          <a href="#myModal" role="button" data-toggle="modal"><span class="badge badge-success">Agregar equipamiento</span></a>
+          <a href="#myModal" role="button" data-toggle="modal"><span class="badge badge-success">Agregar menaje</span></a>
       </div>
    </div>
   </div>
@@ -52,15 +52,15 @@
 <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="myModalLabel">Agregar Equipamiento al Inventario</h3>
+    <h3 id="myModalLabel">Agregar Menaje al Inventario</h3>
   </div>
   <div class="modal-body">
-    <form action="<%=url_for :controller => "inventario_equipamientos", :action => "agregar_elemento_inventario"%>" >
-      <input type="hidden" id="idInventario" name="idInventario" value="<%=@inventario_equipamientos.id%>">
+    <form action="<%=url_for :controller => "inventario_menajes", :action => "agregar_elemento_inventario"%>" >
+      <input type="hidden" id="idInventario" name="idInventario" value="<%=@inventario_menajes.id%>">
       <input type="text" id="cantidad" name="cantidad" placeholder="cantidad" class="input-mini">
-      <select id="tipo_de_equipamiento" name="tipo_de_equipamiento">
-        <% TipoDeEquipamiento.all.each do |tde|%>
-          <option value="<%= tde.id %>"><%= tde %></option>
+      <select id="tipo_de_menaje" name="tipo_de_menaje">
+        <% TipoDeMenaje.all.each do |tdm|%>
+          <option value="<%= tdm.id %>"><%= tdm %></option>
         <% end %>
       </select>
       <input type="submit" value="agregar al inventario" class="btn btn-primary">

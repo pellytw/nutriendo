@@ -80,4 +80,57 @@ class InventarioMenajesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def listado_escuela
+    if params["idEscuela"] then
+      @escuela = Escuela.find(params["idEscuela"].to_i)
+      @inventario_menajes = InventarioMenaje.where(:escuela_id => params["idEscuela"].to_i).first
+      @renglon_inventario_menaje = @inventario_menajes.renglon_inventario_menajes
+    end
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @inventario_menajes }
+    end    
+  end
+
+  def agregar_elemento_inventario
+    #debugger
+
+    @inventario = params["idInventario"]
+    @tipo_de_menaje = params["tipo_de_menaje"]
+    @cantidad = params["cantidad"]
+    if current_user then 
+      #RenglonInventarioEquipamiento(id: integer, fecha_de_alta: date, cantidad: string, user: integer, inventario_equipamiento_id: integer, tipo_de_menaje_id: integer, quien_modifica: integer, created_at: datetime, updated_at: datetime) 
+      RenglonInventarioMenaje.create(
+                                            :cantidad => @cantidad.to_i, 
+                                            :user => current_user.id, 
+                                            :inventario_menaje_id => @inventario.to_i, 
+                                            :tipo_de_menaje_id => @tipo_de_menaje.to_i
+                                          )
+    end
+    redirect_to :back
+  end
+
+  def quitar_elemento_inventario
+    #debugger
+    if params["idElementoInventario"] then
+      RenglonInventarioMenaje.find(params["idElementoInventario"].to_i).destroy
+    end
+    redirect_to :back
+  end
+  
+  def ver_elemento_inventario
+    
+  end
+  
+  def modificar_elemento_inventario
+    if params["pk"] and params["value"] then
+      rie = RenglonInventarioMenaje.find(params["pk"].to_i)
+      if rie then
+        rie.cantidad = params["value"].to_i
+        rie.save
+      end
+    end
+  end
+
 end

@@ -18,9 +18,17 @@ Mysecurity::Application.routes.draw do
     resources :roles
     resources :users
 
+  #CRUD ELEMENTO MENAJE
+  #Ver lista de elementos del inventario de una escuela
+  match 'inventario_menajes/inventarios/listado_escuela/:idEscuela' => 'inventario_menajes#listado_escuela' 
+  #Agregar un elemento (renglon_inventario_equipamiento) al inventario de una escuela
+  match 'inventario_menajes/inventarios/agregar_elemento_inventario' => 'inventario_menajes#agregar_elemento_inventario'
+  #match 'inventario_menajes/inventarios/agregar_elemento_inventario/:idEscuela/:idInventario' => 'inventario_menajes#agregar_elemento_inventario'
+  #Quitar un elemento (renglon_inventario_equipamiento) al inventario de una escuela
+  match 'inventario_menajes/inventarios/quitar_elemento_inventario/:idElementoInventario' => 'inventario_menajes#quitar_elemento_inventario'
+  #Modificar un elemento (renglon_inventario_equipamiento) al inventario de una escuela
+  match 'inventario_menajes/inventarios/modificar_elemento_inventario/' => 'inventario_menajes#modificar_elemento_inventario'
 
-  match 'inventario_menajes/listado_escuela/:idEscuela' => 'inventario_menajes#listado_escuela'
-  
   #CRUD ELEMENTO INVENTARIO
   #Ver lista de elementos del inventario de una escuela
   match 'inventario_equipamientos/inventarios/listado_escuela/:idEscuela' => 'inventario_equipamientos#listado_escuela' 
@@ -29,8 +37,6 @@ Mysecurity::Application.routes.draw do
   #match 'inventario_equipamientos/inventarios/agregar_elemento_inventario/:idEscuela/:idInventario' => 'inventario_equipamientos#agregar_elemento_inventario'
   #Quitar un elemento (renglon_inventario_equipamiento) al inventario de una escuela
   match 'inventario_equipamientos/inventarios/quitar_elemento_inventario/:idElementoInventario' => 'inventario_equipamientos#quitar_elemento_inventario'
-  #Ver un elemento (renglon_inventario_equipamiento) al inventario de una escuela
-  match 'inventario_equipamientos/inventarios/ver_elemento_inventario/:idEscuela/:idInventario/:idElementoInventario' => 'inventario_equipamientos#ver_elemento_inventario'
   #Modificar un elemento (renglon_inventario_equipamiento) al inventario de una escuela
   match 'inventario_equipamientos/inventarios/modificar_elemento_inventario/' => 'inventario_equipamientos#modificar_elemento_inventario'
 
