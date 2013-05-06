@@ -21,7 +21,7 @@
     <td><%= escuela.jornada %></td>
     <td><%= link_to 'ver', escuela, :class => "btn btn-info" %></td>
     <td><%= link_to 'editar', edit_escuela_path(escuela), :class =>  "btn btn-primary" %></td>
-    <td><%= link_to 'eliminar', escuela, method: :delete, data: { confirm: 'Seguro desea eliminar?' }, :class =>  "btn btn-danger" %></td>
+    <td><% if can? :destroy, escuela %><%= link_to 'eliminar', escuela, method: :delete, data: { confirm: 'Seguro desea eliminar?' }, :class =>  "btn btn-danger" %><% end %></td>
   </tr>
 <% end %>
 </table>
