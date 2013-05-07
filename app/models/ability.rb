@@ -17,14 +17,20 @@ def initialize(user)
 	user ||= User.new # guest user
     if user.role? :admin
       can :manage, :all
+    
     elsif user.role? :nutriendo
     	can :read, :all
 
-      #Escuelas
-      #can :update, [Escuela]
-      can :read, [Escuela]
-      #can :create, [Escuela]
-      
+      	#Escuelas
+      	#can :update, [Escuela]
+      	can :read, [Escuela]
+      	#can :create, [Escuela]
+
+        #inventario menaje
+        can :read, [RenglonInventarioMenaje]
+
+        #inventario equipamiento
+        can :read, [RenglonInventarioEquipamiento]      
 
     end
 end

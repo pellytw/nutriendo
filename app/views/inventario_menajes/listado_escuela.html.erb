@@ -18,15 +18,20 @@
             <tr>
               <th>Cantidad</th>
               <th>Tipo de Menaje</th>
-              <th></th>
+              <% if can? :destroy, @RenglonInventarioMenaje %><th></th><% end %>
             </tr>
           <% @renglon_inventario_menaje.each do |rim| %>
             <tr>
-              <td><a href="#" id="cantidad_<%= rim.id%>" name="cantidad" data-type="text" data-pk="<%=rim.id%>" data-url="<%= url_for :controller => "inventario_menajes", :action => "modificar_elemento_inventario" %>" name="cantidad" data-original-title="Ingrese cantidad"><%= rim.cantidad %></a>
+              <td>
+                <% if can? :update, :destroy, RenglonInventarioMenaje %>
+                  <a href="#" id="cantidad_<%= rim.id%>" name="cantidad" data-type="text" data-pk="<%=rim.id%>" data-url="<%= url_for :controller => "inventario_menajes", :action => "modificar_elemento_inventario" %>" name="cantidad" data-original-title="Ingrese cantidad"><%= rim.cantidad %></a>
+                <% elsif can? :read, RenglonInventarioMenaje %>
+                  <%= rim.cantidad %>
+                <% end %>
               </td>
               <td><%= rim.tipo_de_menaje %></td>
               <!--inventario_menajes#quitar_elemento_inventario-->
-              <td><a href="<%= url_for :controller => "inventario_menajes", :action => "quitar_elemento_inventario", :idElementoInventario => rim.id %>" onclick="return confirm('Realmente desea eliminar?')"> <span class="badge badge-important"> eliminar </span></a></td>
+              <% if can? :destroy, RenglonInventarioMenaje %><td><a href="<%= url_for :controller => "inventario_menajes", :action => "quitar_elemento_inventario", :idElementoInventario => rim.id %>" onclick="return confirm('Realmente desea eliminar?')"> <span class="badge badge-important"> eliminar </span></a></td><% end %>
             </tr>
           <% end %>
           <% @renglon_inventario_menaje.each do |rim| %>
@@ -43,7 +48,7 @@
           </table>
           <br />
 
-          <a href="#myModal" role="button" data-toggle="modal"><span class="badge badge-success">Agregar menaje</span></a>
+          <% if can? :update, :destroy, RenglonInventarioMenaje %><a href="#myModal" role="button" data-toggle="modal"><span class="badge badge-success">Agregar menaje</span></a><% end %>
       </div>
    </div>
   </div>

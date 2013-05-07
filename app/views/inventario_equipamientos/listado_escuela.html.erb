@@ -18,15 +18,20 @@
             <tr>
               <th>Cantidad</th>
               <th>Tipo de equipamiento</th>
-              <th></th>
+              <% if can? :destroy, @RenglonInventarioEquipamiento %><th></th><% end %>
             </tr>
           <% @renglon_inventario_equipamiento.each do |rie| %>
             <tr>
-              <td><a href="#" id="cantidad_<%= rie.id%>" name="cantidad" data-type="text" data-pk="<%=rie.id%>" data-url="<%= url_for :controller => "inventario_equipamientos", :action => "modificar_elemento_inventario" %>" name="cantidad" data-original-title="Ingrese cantidad"><%= rie.cantidad %></a>
+              <td>
+                <% if can? :update, :destroy, RenglonInventarioEquipamiento %>
+                  <a href="#" id="cantidad_<%= rie.id%>" name="cantidad" data-type="text" data-pk="<%=rie.id%>" data-url="<%= url_for :controller => "inventario_equipamientos", :action => "modificar_elemento_inventario" %>" name="cantidad" data-original-title="Ingrese cantidad"><%= rie.cantidad %></a>
+                <% elsif can? :read, RenglonInventarioEquipamiento %>
+                  <%= rie.cantidad %>
+                <% end %>
               </td>
               <td><%= rie.tipo_de_equipamiento %></td>
               <!--inventario_equipamientos#quitar_elemento_inventario-->
-              <td><a href="<%= url_for :controller => "inventario_equipamientos", :action => "quitar_elemento_inventario", :idElementoInventario => rie.id %>" onclick="return confirm('Realmente desea eliminar?')"> <span class="badge badge-important"> eliminar </span></a></td>
+              <% if can? :destroy, RenglonInventarioEquipamiento %><td><a href="<%= url_for :controller => "inventario_equipamientos", :action => "quitar_elemento_inventario", :idElementoInventario => rie.id %>" onclick="return confirm('Realmente desea eliminar?')"> <span class="badge badge-important"> eliminar </span></a></td><% end %>
             </tr>
           <% end %>
           <% @renglon_inventario_equipamiento.each do |rie| %>
@@ -43,7 +48,7 @@
           </table>
           <br />
 
-          <a href="#myModal" role="button" data-toggle="modal"><span class="badge badge-success">Agregar equipamiento</span></a>
+          <% if can? :update, :destroy, RenglonInventarioEquipamiento %><a href="#myModal" role="button" data-toggle="modal"><span class="badge badge-success">Agregar equipamiento</span></a><% end %>
       </div>
    </div>
   </div>
