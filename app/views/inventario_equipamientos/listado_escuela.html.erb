@@ -23,7 +23,7 @@
           <% @renglon_inventario_equipamiento.each do |rie| %>
             <tr>
               <td>
-                <% if can? :update, :destroy, RenglonInventarioEquipamiento %>
+                <% if can? :update, RenglonInventarioEquipamiento %>
                   <a href="#" id="cantidad_<%= rie.id%>" name="cantidad" data-type="text" data-pk="<%=rie.id%>" data-url="<%= url_for :controller => "inventario_equipamientos", :action => "modificar_elemento_inventario" %>" name="cantidad" data-original-title="Ingrese cantidad"><%= rie.cantidad %></a>
                 <% elsif can? :read, RenglonInventarioEquipamiento %>
                   <%= rie.cantidad %>
@@ -48,7 +48,7 @@
           </table>
           <br />
 
-          <% if can? :update, :destroy, RenglonInventarioEquipamiento %><a href="#myModal" role="button" data-toggle="modal"><span class="badge badge-success">Agregar equipamiento</span></a><% end %>
+          <% if can? :create, RenglonInventarioEquipamiento %><a href="#myModal" role="button" data-toggle="modal"><span class="badge badge-success">Agregar equipamiento</span></a><% end %>
       </div>
    </div>
   </div>
