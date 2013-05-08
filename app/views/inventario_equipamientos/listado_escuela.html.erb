@@ -18,7 +18,7 @@
             <tr>
               <th>Cantidad</th>
               <th>Tipo de equipamiento</th>
-              <% if can? :destroy, @RenglonInventarioEquipamiento %><th></th><% end %>
+              <% if can? :destroy, RenglonInventarioEquipamiento %><th></th><% end %>
             </tr>
           <% @renglon_inventario_equipamiento.each do |rie| %>
             <tr>
