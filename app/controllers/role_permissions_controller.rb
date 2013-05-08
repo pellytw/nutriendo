@@ -1,5 +1,6 @@
 class RolePermissionsController < ApplicationController
   layout nil
+  before_filter :authenticate_user!
   load_and_authorize_resource
   # GET /role_permissions
   # GET /role_permissions.json

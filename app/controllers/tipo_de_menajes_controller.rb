@@ -1,4 +1,6 @@
 class TipoDeMenajesController < ApplicationController
+  before_filter :authenticate_user!
+  load_and_authorize_resource
   # GET /tipo_de_menajes
   # GET /tipo_de_menajes.json
   def index

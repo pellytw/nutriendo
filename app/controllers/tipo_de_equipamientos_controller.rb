@@ -1,4 +1,6 @@
 class TipoDeEquipamientosController < ApplicationController
+  before_filter :authenticate_user!
+  load_and_authorize_resource
   # GET /tipo_de_equipamientos
   # GET /tipo_de_equipamientos.json
   def index

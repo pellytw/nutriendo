@@ -5,12 +5,12 @@
       <div class="span3">
         <ul class="nav nav-list">
           <li class="nav-header">Datos Escuela</li>
-          <li><%= link_to 'ver', @escuela %></li>
-          <li><%= link_to 'editar', edit_escuela_path(@escuela) %></li>
+          <% if can? :read, Escuela %><li><%= link_to 'ver', @escuela %></li><% end %>
+          <% if can? :update, Escuela %><li><%= link_to 'editar', edit_escuela_path(@escuela) %></li><% end %>
           <li class="nav-header">Menaje</li>
-            <li><a href="<%= url_for :controller => "inventario_menajes", :action => "listado_escuela", :idEscuela => @escuela.id %>">ver Menaje</a></li>
+            <% if can? :read, RenglonInventarioMenaje %><li><a href="<%= url_for :controller => "inventario_menajes", :action => "listado_escuela", :idEscuela => @escuela.id %>">ver Menaje</a></li><% end %>
           <li class="nav-header">Equipamiento</li>
-            <li><a href="<%= url_for :controller => "inventario_equipamientos", :action => "listado_escuela", :idEscuela => @escuela.id %>">ver equipamiento</a></li>                  
+            <% if can? :read, RenglonInventarioEquipamiento %><li><a href="<%= url_for :controller => "inventario_equipamientos", :action => "listado_escuela", :idEscuela => @escuela.id %>">ver Equipamiento</a></li><% end %>                 
         </ul>
       </div>
       <div class="span9">

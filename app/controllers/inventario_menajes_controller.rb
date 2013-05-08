@@ -1,4 +1,6 @@
 class InventarioMenajesController < ApplicationController
+  before_filter :authenticate_user!
+  load_and_authorize_resource
   # GET /inventario_menajes
   # GET /inventario_menajes.json
   def index

@@ -19,18 +19,18 @@ def initialize(user)
       can :manage, :all
     
     elsif user.role? :nutriendo
-    	can :read, :all
 
       	#Escuelas
-      	#can :update, [Escuela]
       	can :read, [Escuela]
-      	#can :create, [Escuela]
 
-        #inventario menaje
+        #renglon inventario menaje
         can :read, [RenglonInventarioMenaje]
 
-        #inventario equipamiento
+        #renglon inventario equipamiento
         can :read, [RenglonInventarioEquipamiento]      
+
+        can :listado_escuela, [InventarioMenaje]
+        can :listado_escuela, [InventarioEquipamiento]
 
     end
 end
