@@ -55,7 +55,7 @@ def initialize(user)
         can :listado_escuela, [InventarioMenaje]
         can :listado_escuela, [InventarioEquipamiento]
 
-    elsif user.role? :bienes_reales
+    elsif user.role? :bienes
 
         #Escuelas
         can :read, [Escuela]
