@@ -55,6 +55,43 @@ def initialize(user)
         can :listado_escuela, [InventarioMenaje]
         can :listado_escuela, [InventarioEquipamiento]
 
+    elsif user.role? :bienes_reales
+
+        #Escuelas
+        can :read, [Escuela]
+        can :update, [Escuela]
+        can :create, [Escuela]
+        can :destroy,[Escuela]
+
+        #renglon inventario menaje
+        can :read, [RenglonInventarioMenaje]
+        can :update, [RenglonInventarioMenaje]
+        can :create, [RenglonInventarioMenaje]
+        can :destroy, [RenglonInventarioMenaje]
+
+        #renglon inventario equipamiento
+        can :read, [RenglonInventarioEquipamiento]      
+        can :update, [RenglonInventarioEquipamiento]
+        can :create, [RenglonInventarioEquipamiento]
+        can :destroy, [RenglonInventarioEquipamiento]
+
+        can :listado_escuela, [InventarioMenaje]
+        can :listado_escuela, [InventarioEquipamiento]
+
+    elsif user.role? :subsecretario
+
+       #Escuelas
+        can :read, [Escuela]
+
+        #renglon inventario menaje
+        can :read, [RenglonInventarioMenaje]
+
+        #renglon inventario equipamiento
+        can :read, [RenglonInventarioEquipamiento]      
+
+        can :listado_escuela, [InventarioMenaje]
+        can :listado_escuela, [InventarioEquipamiento]
+
     end
 
 
