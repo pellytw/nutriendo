@@ -87,7 +87,16 @@ class InventarioMenajesController < ApplicationController
     if params["idEscuela"] then
       @escuela = Escuela.find(params["idEscuela"].to_i)
       @inventario_menajes = InventarioMenaje.where(:escuela_id => params["idEscuela"].to_i).first
-      @renglon_inventario_menaje = @inventario_menajes.renglon_inventario_menajes
+    
+      if params["q"] then
+        if params["q"] == "" then
+          @renglon_inventario_menaje = @inventario_menajes.renglon_inventario_menajes
+        else
+          @renglon_inventario_menaje = @inventario_menajes.renglon_inventario_menajes.where(:tipo_de_menaje_id => params["q"].to_i)
+        end
+      else      
+        @renglon_inventario_menaje = @inventario_menajes.renglon_inventario_menajes
+      end  
     end
     respond_to do |format|
       format.html # index.html.erb
