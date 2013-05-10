@@ -13,6 +13,21 @@
             <% if can? :read, RenglonInventarioEquipamiento %><li><a href="<%= url_for :controller => "inventario_equipamientos", :action => "listado_escuela", :idEscuela => @escuela.id %>">ver Equipamiento</a></li><% end %>
         </ul>
       </div>
+
+
+      <form class="form-search" action="<%= url_for :controller => "inventario_equipamientos", :action => "listado_escuela"%>">
+        <div class="input-prepend">
+          <button type="submit" class="btn" >Buscar</button>
+          <select name="q">
+            <%TipoDeEquipamiento.all.each do |tde|%>
+              <option value="<%= tde.id %>"><%= tde %></option>
+            <% end %>
+          </select>          
+        </div>
+      </form>
+
+
+
       <div class="span9">
         <table class="table table-bordered table-striped">
             <tr>

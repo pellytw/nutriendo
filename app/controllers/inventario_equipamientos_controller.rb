@@ -87,13 +87,23 @@ class InventarioEquipamientosController < ApplicationController
     if params["idEscuela"] then
       @escuela = Escuela.find(params["idEscuela"].to_i)
       @inventario_equipamientos = InventarioEquipamiento.where(:escuela_id => params["idEscuela"].to_i).first
-      @renglon_inventario_equipamiento = @inventario_equipamientos.renglon_inventario_equipamientos
+    
+      if params["q"] then
+        if params["q"] == "" then
+          @renglon_inventario_equipamiento = @inventario_equipamientos.renglon_inventario_equipamientos
+        else
+          @renglon_inventario_equipamiento = @inventario_equipamientos.renglon_inventario_equipamientos.where(:tipo_de_equipamiento_id => params["q"].to_i)
+        end
+      else      
+        @renglon_inventario_equipamiento = @inventario_equipamientos.renglon_inventario_equipamientos
+      end  
     end
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @inventario_equipamientos }
     end    
   end
+
   def agregar_elemento_inventario
     #debugger
     @inventario = params["idInventario"]
@@ -130,4 +140,5 @@ class InventarioEquipamientosController < ApplicationController
     end
   end
 
+   
 end
