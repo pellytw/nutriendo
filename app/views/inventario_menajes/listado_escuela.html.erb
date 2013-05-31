@@ -15,17 +15,21 @@
       </div>
 
       <form class="form-search" action="<%= url_for :controller => "inventario_menajes", :action => "listado_escuela"%>">
-        <div class="input-prepend">
-          <button type="submit" class="btn" >Buscar</button>
+        <div >
+          <div class="input-prepend">
+            <button type="submit" class="btn" >Buscar</button>
+          </div>
           <select name="q">
             <%TipoDeMenaje.all.each do |tdm|%>
               <option value="<%= tdm.id %>"><%= tdm %></option>
             <% end %>
-          </select>          
+          </select> 
+          <div class="input-append">
+            <a class="btn" href="<%= url_for :controller => "inventario_menajes", :action => "listado_escuela"%>">Limpiar</a>
+          </div>
         </div>
       </form>
-
-
+      
       <div class="span9">
         <table class="table table-bordered table-striped">
             <tr>

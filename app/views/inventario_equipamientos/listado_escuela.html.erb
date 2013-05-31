@@ -14,18 +14,22 @@
         </ul>
       </div>
 
-
       <form class="form-search" action="<%= url_for :controller => "inventario_equipamientos", :action => "listado_escuela"%>">
-        <div class="input-prepend">
-          <button type="submit" class="btn" >Buscar</button>
+        <div >
+          <div class="input-prepend">
+            <button type="submit" class="btn" >Buscar</button>
+          </div>
           <select name="q">
             <%TipoDeEquipamiento.all.each do |tde|%>
               <option value="<%= tde.id %>"><%= tde %></option>
             <% end %>
-          </select>          
+          </select> 
+          <div class="input-append">
+            <a class="btn" href="<%= url_for :controller => "inventario_equipamientos", :action => "listado_escuela"%>">Limpiar</a>
+            
+          </div>
         </div>
       </form>
-
 
 
       <div class="span9">

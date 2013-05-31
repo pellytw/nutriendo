@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.5.29, for debian-linux-gnu (i686)
+-- MySQL dump 10.13  Distrib 5.1.54, for debian-linux-gnu (x86_64)
 --
 -- Host: localhost    Database: nutriendo
 -- ------------------------------------------------------
--- Server version	5.5.29-0ubuntu0.12.04.1
+-- Server version	5.1.54-1ubuntu4
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -32,7 +32,7 @@ CREATE TABLE `escuelas` (
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,7 +41,7 @@ CREATE TABLE `escuelas` (
 
 LOCK TABLES `escuelas` WRITE;
 /*!40000 ALTER TABLE `escuelas` DISABLE KEYS */;
-INSERT INTO `escuelas` VALUES (6,733,'Bryn Gwyn',3,2,2,'2013-04-17 14:11:51','2013-05-06 14:38:40');
+INSERT INTO `escuelas` VALUES (1,733,'Agrotécnica Benito Owen',4,2,1,'2013-04-18 15:36:03','2013-04-18 15:36:03'),(2,793,'Amaya',1,2,2,'2013-05-03 15:24:36','2013-05-06 13:11:16');
 /*!40000 ALTER TABLE `escuelas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -59,7 +59,7 @@ CREATE TABLE `inventario_equipamientos` (
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -68,7 +68,7 @@ CREATE TABLE `inventario_equipamientos` (
 
 LOCK TABLES `inventario_equipamientos` WRITE;
 /*!40000 ALTER TABLE `inventario_equipamientos` DISABLE KEYS */;
-INSERT INTO `inventario_equipamientos` VALUES (5,6,'2013-04-17','2013-04-17 14:11:51','2013-04-17 14:11:51');
+INSERT INTO `inventario_equipamientos` VALUES (1,1,'2013-04-18','2013-04-18 15:36:03','2013-04-18 15:36:03'),(2,2,'2013-05-03','2013-05-03 15:24:36','2013-05-03 15:24:36');
 /*!40000 ALTER TABLE `inventario_equipamientos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -86,7 +86,7 @@ CREATE TABLE `inventario_menajes` (
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -95,7 +95,7 @@ CREATE TABLE `inventario_menajes` (
 
 LOCK TABLES `inventario_menajes` WRITE;
 /*!40000 ALTER TABLE `inventario_menajes` DISABLE KEYS */;
-INSERT INTO `inventario_menajes` VALUES (3,6,'2013-04-17','2013-04-17 14:11:51','2013-04-17 14:11:51');
+INSERT INTO `inventario_menajes` VALUES (1,1,'2013-04-18','2013-04-18 15:36:03','2013-04-18 15:36:03'),(2,2,'2013-05-03','2013-05-03 15:24:36','2013-05-03 15:24:36');
 /*!40000 ALTER TABLE `inventario_menajes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -121,7 +121,7 @@ CREATE TABLE `jornadas` (
 
 LOCK TABLES `jornadas` WRITE;
 /*!40000 ALTER TABLE `jornadas` DISABLE KEYS */;
-INSERT INTO `jornadas` VALUES (1,'MEDIA','2013-04-16 15:27:26','2013-04-16 15:27:26'),(2,'COMPLETA','2013-04-16 15:27:32','2013-04-16 15:27:32');
+INSERT INTO `jornadas` VALUES (1,'COMPLETA','2013-04-18 15:35:06','2013-04-18 15:35:06'),(2,'MEDIA JORNADA','2013-04-18 15:35:13','2013-04-18 15:35:13');
 /*!40000 ALTER TABLE `jornadas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -139,7 +139,7 @@ CREATE TABLE `localidads` (
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -148,7 +148,7 @@ CREATE TABLE `localidads` (
 
 LOCK TABLES `localidads` WRITE;
 /*!40000 ALTER TABLE `localidads` DISABLE KEYS */;
-INSERT INTO `localidads` VALUES (1,'Trelew',4,'2013-04-16 13:24:51','2013-04-16 13:24:51'),(2,'Rawson',4,'2013-04-16 13:38:03','2013-04-16 13:38:03'),(3,'Gaiman',4,'2013-04-16 15:30:00','2013-04-16 15:30:00');
+INSERT INTO `localidads` VALUES (1,'Trelew',4,'2013-04-18 15:33:08','2013-04-18 15:33:08'),(2,'Puerto Madryn',2,'2013-04-18 15:33:23','2013-04-18 15:33:23'),(3,'Gaiman',4,'2013-04-18 15:33:33','2013-04-18 15:33:33'),(4,'Bryn Gwyn',4,'2013-04-18 15:33:41','2013-04-18 15:33:41'),(5,'Sarminento',5,'2013-04-18 15:33:56','2013-04-18 15:33:56'),(6,'Comodoro Rivadavia',6,'2013-04-18 15:34:09','2013-04-18 15:34:09'),(7,'Esquel',3,'2013-04-18 15:34:20','2013-04-18 15:34:20'),(8,'Lago Puelo',1,'2013-04-18 15:34:29','2013-04-18 15:34:29'),(9,'Las Golondrinas',1,'2013-04-18 15:34:40','2013-04-18 15:34:40');
 /*!40000 ALTER TABLE `localidads` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -174,7 +174,7 @@ CREATE TABLE `nivels` (
 
 LOCK TABLES `nivels` WRITE;
 /*!40000 ALTER TABLE `nivels` DISABLE KEYS */;
-INSERT INTO `nivels` VALUES (1,'PRIMARIO','2013-04-16 15:28:00','2013-04-16 15:28:00'),(2,'SECUNDARIO','2013-04-16 15:28:05','2013-04-16 15:28:05');
+INSERT INTO `nivels` VALUES (1,'PRIMARIO','2013-04-18 15:31:48','2013-04-18 15:31:48'),(2,'SECUNDARIO','2013-04-18 15:31:55','2013-04-18 15:31:55');
 /*!40000 ALTER TABLE `nivels` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -200,7 +200,7 @@ CREATE TABLE `regions` (
 
 LOCK TABLES `regions` WRITE;
 /*!40000 ALTER TABLE `regions` DISABLE KEYS */;
-INSERT INTO `regions` VALUES (1,'Región I','2013-04-16 13:17:40','2013-04-16 13:17:40'),(2,'Región II','2013-04-16 13:17:51','2013-04-16 13:17:51'),(3,'Región III','2013-04-16 13:17:54','2013-04-16 13:17:54'),(4,'Región IV','2013-04-16 13:17:58','2013-04-16 13:17:58'),(5,'Región V','2013-04-16 13:18:01','2013-04-16 13:18:01'),(6,'Región VI','2013-04-16 13:18:05','2013-04-16 13:18:05');
+INSERT INTO `regions` VALUES (1,'Región I','2013-04-18 15:32:16','2013-04-18 15:32:16'),(2,'Región II','2013-04-18 15:32:18','2013-04-18 15:32:18'),(3,'Región III','2013-04-18 15:32:22','2013-04-18 15:32:22'),(4,'Región IV','2013-04-18 15:32:24','2013-04-18 15:32:24'),(5,'Región V','2013-04-18 15:32:27','2013-04-18 15:32:27'),(6,'Región VI','2013-04-18 15:32:30','2013-04-18 15:32:30');
 /*!40000 ALTER TABLE `regions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -222,7 +222,7 @@ CREATE TABLE `renglon_inventario_equipamientos` (
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -231,7 +231,7 @@ CREATE TABLE `renglon_inventario_equipamientos` (
 
 LOCK TABLES `renglon_inventario_equipamientos` WRITE;
 /*!40000 ALTER TABLE `renglon_inventario_equipamientos` DISABLE KEYS */;
-INSERT INTO `renglon_inventario_equipamientos` VALUES (1,NULL,'12',1,5,1,NULL,'2013-05-06 13:07:16','2013-05-06 13:07:16');
+INSERT INTO `renglon_inventario_equipamientos` VALUES (32,NULL,'2',1,1,3,NULL,'2013-05-03 11:50:58','2013-05-03 11:50:58'),(33,NULL,'3',1,1,4,NULL,'2013-05-03 11:51:07','2013-05-03 11:51:07'),(34,NULL,'3',1,1,5,NULL,'2013-05-03 11:51:17','2013-05-03 11:51:17'),(35,NULL,'2',1,1,6,NULL,'2013-05-03 11:51:27','2013-05-03 11:51:27'),(36,NULL,'2',1,1,7,NULL,'2013-05-03 11:51:36','2013-05-03 11:51:36'),(37,NULL,'2',1,1,8,NULL,'2013-05-03 11:51:44','2013-05-03 11:51:44'),(38,NULL,'1',1,2,1,NULL,'2013-05-03 15:26:32','2013-05-03 15:26:32'),(39,NULL,'1',1,2,2,NULL,'2013-05-03 15:26:37','2013-05-03 15:26:37'),(40,NULL,'2',1,2,3,NULL,'2013-05-03 15:26:46','2013-05-03 15:26:46'),(41,NULL,'2',1,2,4,NULL,'2013-05-03 15:26:54','2013-05-03 15:26:54'),(42,NULL,'2',1,2,5,NULL,'2013-05-03 15:27:00','2013-05-03 15:27:00'),(43,NULL,'1',1,2,6,NULL,'2013-05-03 15:27:06','2013-05-03 15:27:06'),(44,NULL,'1',1,2,7,NULL,'2013-05-03 15:27:16','2013-05-03 15:27:16'),(45,NULL,'1',1,2,8,NULL,'2013-05-03 15:27:23','2013-05-03 15:27:23'),(46,NULL,'1',1,1,4,NULL,'2013-05-06 11:19:59','2013-05-06 11:19:59');
 /*!40000 ALTER TABLE `renglon_inventario_equipamientos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -253,7 +253,7 @@ CREATE TABLE `renglon_inventario_menajes` (
   `updated_at` datetime NOT NULL,
   `cantidad` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -262,7 +262,7 @@ CREATE TABLE `renglon_inventario_menajes` (
 
 LOCK TABLES `renglon_inventario_menajes` WRITE;
 /*!40000 ALTER TABLE `renglon_inventario_menajes` DISABLE KEYS */;
-INSERT INTO `renglon_inventario_menajes` VALUES (1,NULL,NULL,1,NULL,3,'2013-05-06 13:06:44','2013-05-06 13:06:44',20),(2,NULL,NULL,1,NULL,3,'2013-05-07 11:58:11','2013-05-07 11:58:11',11);
+INSERT INTO `renglon_inventario_menajes` VALUES (7,NULL,NULL,1,NULL,1,'2013-05-03 14:35:33','2013-05-03 14:57:29',12),(9,NULL,NULL,18,NULL,1,'2013-05-03 14:35:46','2013-05-03 14:57:22',12),(10,NULL,NULL,22,NULL,1,'2013-05-03 14:57:17','2013-05-06 11:14:28',3),(11,NULL,NULL,17,NULL,1,'2013-05-03 14:57:36','2013-05-03 14:57:36',6),(12,NULL,NULL,13,NULL,1,'2013-05-03 15:07:07','2013-05-03 15:07:07',12),(13,NULL,NULL,1,NULL,2,'2013-05-03 15:24:47','2013-05-03 15:24:47',20),(14,NULL,NULL,2,NULL,2,'2013-05-03 15:25:02','2013-05-03 15:25:02',20),(15,NULL,NULL,3,NULL,2,'2013-05-03 15:25:16','2013-05-03 15:25:16',20),(16,NULL,NULL,4,NULL,2,'2013-05-03 15:25:25','2013-05-03 15:25:25',20),(17,NULL,NULL,13,NULL,2,'2013-05-03 15:25:46','2013-05-03 15:25:46',20),(18,NULL,NULL,15,NULL,2,'2013-05-03 15:25:57','2013-05-03 15:25:57',20),(19,NULL,NULL,17,NULL,2,'2013-05-03 15:26:12','2013-05-03 15:26:12',20),(20,NULL,NULL,21,NULL,2,'2013-05-03 15:26:24','2013-05-03 15:26:24',2),(21,NULL,NULL,19,NULL,1,'2013-05-06 11:14:45','2013-05-06 11:14:45',5),(22,NULL,NULL,3,NULL,2,'2013-05-06 11:40:10','2013-05-06 11:40:10',20);
 /*!40000 ALTER TABLE `renglon_inventario_menajes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -332,7 +332,7 @@ CREATE TABLE `roles` (
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -341,7 +341,7 @@ CREATE TABLE `roles` (
 
 LOCK TABLES `roles` WRITE;
 /*!40000 ALTER TABLE `roles` DISABLE KEYS */;
-INSERT INTO `roles` VALUES (1,'admin','2013-04-16 12:21:57','2013-04-16 12:21:57'),(2,'nutriendo','2013-05-06 13:23:18','2013-05-06 13:23:18'),(4,'delegado','2013-05-08 16:00:59','2013-05-08 16:00:59'),(5,'subsecretario','2013-05-09 13:20:41','2013-05-09 13:20:41'),(7,'bienes','2013-05-09 13:22:22','2013-05-09 13:22:22');
+INSERT INTO `roles` VALUES (1,'admin','2013-04-18 15:36:53','2013-04-18 15:36:53');
 /*!40000 ALTER TABLE `roles` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -364,7 +364,7 @@ CREATE TABLE `schema_migrations` (
 
 LOCK TABLES `schema_migrations` WRITE;
 /*!40000 ALTER TABLE `schema_migrations` DISABLE KEYS */;
-INSERT INTO `schema_migrations` VALUES ('20120201182115'),('20120224180650'),('20120224181028'),('20120302182538'),('20120410182942'),('20130416113817'),('20130416113845'),('20130416113900'),('20130416114406'),('20130416114517'),('20130416114632'),('20130416114702'),('20130416115133'),('20130416115215'),('20130416115320'),('20130416115336'),('20130417122201'),('20130417122227'),('20130417122407'),('20130417122428'),('20130503134333'),('20130503141700');
+INSERT INTO `schema_migrations` VALUES ('20120201182115'),('20120224180650'),('20120224181028'),('20120302182538'),('20120410182942'),('20130416113817'),('20130416113845'),('20130416113900'),('20130416114406'),('20130416114517'),('20130416115320'),('20130416115336'),('20130417122201'),('20130417122227'),('20130417122407'),('20130417122428'),('20130503134333'),('20130503141700');
 /*!40000 ALTER TABLE `schema_migrations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -382,7 +382,7 @@ CREATE TABLE `tipo_de_equipamientos` (
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -391,7 +391,7 @@ CREATE TABLE `tipo_de_equipamientos` (
 
 LOCK TABLES `tipo_de_equipamientos` WRITE;
 /*!40000 ALTER TABLE `tipo_de_equipamientos` DISABLE KEYS */;
-INSERT INTO `tipo_de_equipamientos` VALUES (1,'Equipamiento 1','','2013-05-06 13:06:26','2013-05-06 13:06:26');
+INSERT INTO `tipo_de_equipamientos` VALUES (1,'Heladera   c/freezer ','no cargada','2013-04-18 15:54:03','2013-04-18 15:54:03'),(2,'Freezer, capacidad 250 litros','no cargada','2013-04-18 15:54:03','2013-04-18 15:54:03'),(3,'Procesadora  de alimentos Industrial','no cargada','2013-04-18 15:54:03','2013-04-18 15:54:03'),(4,'Procesadora familiar','no cargada','2013-04-18 15:54:03','2013-04-18 15:54:03'),(5,'Licuadora familiar','no cargada','2013-04-18 15:54:03','2013-04-18 15:54:03'),(6,'Cocina Industrial ','no cargada','2013-04-18 15:54:04','2013-04-18 15:54:04'),(7,'Picadora de carne','no cargada','2013-04-18 15:54:04','2013-04-18 15:54:04'),(8,'Amasadora','no cargada','2013-04-18 15:54:05','2013-04-18 15:54:05');
 /*!40000 ALTER TABLE `tipo_de_equipamientos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -409,7 +409,7 @@ CREATE TABLE `tipo_de_menajes` (
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -418,7 +418,7 @@ CREATE TABLE `tipo_de_menajes` (
 
 LOCK TABLES `tipo_de_menajes` WRITE;
 /*!40000 ALTER TABLE `tipo_de_menajes` DISABLE KEYS */;
-INSERT INTO `tipo_de_menajes` VALUES (1,'Menaje 1','','2013-05-06 13:06:14','2013-05-06 13:06:14');
+INSERT INTO `tipo_de_menajes` VALUES (1,'Cuchillo','no cargada','2013-04-18 15:52:44','2013-04-18 15:52:44'),(2,'Tenedor','no cargada','2013-04-18 15:52:45','2013-04-18 15:52:45'),(3,'Cuchara','no cargada','2013-04-18 15:52:45','2013-04-18 15:52:45'),(4,'Cucharita','no cargada','2013-04-18 15:52:45','2013-04-18 15:52:45'),(5,'Cuchillo p/ pan','no cargada','2013-04-18 15:52:45','2013-04-18 15:52:45'),(6,'Cuchillo p/ carne','no cargada','2013-04-18 15:52:45','2013-04-18 15:52:45'),(7,'Cuchara de madera grande','no cargada','2013-04-18 15:52:45','2013-04-18 15:52:45'),(8,'Taza tipo jarro de vidrio o cerámica','no cargada','2013-04-18 15:52:45','2013-04-18 15:52:45'),(9,'Taza de plástico','no cargada','2013-04-18 15:52:45','2013-04-18 15:52:45'),(10,'Jarra plástica','no cargada','2013-04-18 15:52:45','2013-04-18 15:52:45'),(11,'Vaso de vidrio','no cargada','2013-04-18 15:52:45','2013-04-18 15:52:45'),(12,'Vaso de plástico','no cargada','2013-04-18 15:52:45','2013-04-18 15:52:45'),(13,'Plato hondo de vidrio','no cargada','2013-04-18 15:52:45','2013-04-18 15:52:45'),(14,'Plato hondo de plástico','no cargada','2013-04-18 15:52:45','2013-04-18 15:52:45'),(15,'Plato playo de vidrio','no cargada','2013-04-18 15:52:45','2013-04-18 15:52:45'),(16,'Plato playo de plástico','no cargada','2013-04-18 15:52:45','2013-04-18 15:52:45'),(17,'Plato postre de vidrio','no cargada','2013-04-18 15:52:45','2013-04-18 15:52:45'),(18,'Plato postre de plástico','no cargada','2013-04-18 15:52:45','2013-04-18 15:52:45'),(19,'Cucharón','no cargada','2013-04-18 15:52:45','2013-04-18 15:52:45'),(20,'Espumadera','no cargada','2013-04-18 15:52:45','2013-04-18 15:52:45'),(21,'Olla  Nº 40','no cargada','2013-04-18 15:52:45','2013-04-18 15:52:45'),(22,'Olla  Nº 28 ','no cargada','2013-04-18 15:52:45','2013-04-18 15:52:45'),(23,'Colapasta N° 40 ','no cargada','2013-04-18 15:52:45','2013-04-18 15:52:45'),(24,'Asadera rectangulares  p / horno','no cargada','2013-04-18 15:52:46','2013-04-18 15:52:46'),(25,'Pava N° 18  ','no cargada','2013-04-18 15:52:46','2013-04-18 15:52:46'),(26,'Pava N° 22 ','no cargada','2013-04-18 15:52:46','2013-04-18 15:52:46'),(27,'Compoteras de vidrio ','no cargada','2013-04-18 15:52:46','2013-04-18 15:52:46'),(28,'Compotera de plástico','no cargada','2013-04-18 15:52:46','2013-04-18 15:52:46'),(29,'Tabla para picar verdura  o carne ','no cargada','2013-04-18 15:52:46','2013-04-18 15:52:46'),(30,'Ensaladera  plástica','no cargada','2013-04-18 15:52:46','2013-04-18 15:52:46'),(31,'Panera plástica  22 cm ','no cargada','2013-04-18 15:52:46','2013-04-18 15:52:46'),(32,'Bowl hermético rectangular  x 1,10 litros ','no cargada','2013-04-18 15:52:46','2013-04-18 15:52:46'),(33,'Bowl hermético rectangular x 5 litros ','no cargada','2013-04-18 15:52:46','2013-04-18 15:52:46'),(34,'Palo de amasar','no cargada','2013-04-18 15:52:46','2013-04-18 15:52:46'),(35,'Destapador','no cargada','2013-04-18 15:52:46','2013-04-18 15:52:46'),(36,'Abrelata','no cargada','2013-04-18 15:52:46','2013-04-18 15:52:46'),(37,'Pelapapa','no cargada','2013-04-18 15:52:46','2013-04-18 15:52:46'),(38,'Rallador ','no cargada','2013-04-18 15:52:46','2013-04-18 15:52:46'),(39,'Colador de alambre  grande','no cargada','2013-04-18 15:52:47','2013-04-18 15:52:47');
 /*!40000 ALTER TABLE `tipo_de_menajes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -436,7 +436,7 @@ CREATE TABLE `user_roles` (
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -445,7 +445,7 @@ CREATE TABLE `user_roles` (
 
 LOCK TABLES `user_roles` WRITE;
 /*!40000 ALTER TABLE `user_roles` DISABLE KEYS */;
-INSERT INTO `user_roles` VALUES (1,1,1,'2013-05-06 11:11:55','2013-05-06 11:11:55'),(2,2,2,'2013-05-06 13:41:30','2013-05-06 13:41:30'),(3,3,3,'2013-05-08 15:26:04','2013-05-08 15:26:04'),(4,3,4,'2013-05-08 16:01:16','2013-05-08 16:01:16'),(5,4,6,'2013-05-09 13:21:18','2013-05-09 13:21:18'),(6,4,7,'2013-05-09 13:22:43','2013-05-09 13:22:43');
+INSERT INTO `user_roles` VALUES (1,1,1,'2013-04-18 15:37:20','2013-04-18 15:37:20');
 /*!40000 ALTER TABLE `user_roles` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -473,7 +473,7 @@ CREATE TABLE `users` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_users_on_email` (`email`),
   UNIQUE KEY `index_users_on_reset_password_token` (`reset_password_token`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -482,7 +482,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'pelly87@hotmail.com','$2a$10$pfT1YweUT8UMIAkZaUrm6et3jxc.deS2L2cvRVGdAGvp/s6DBxR9y',NULL,NULL,NULL,16,'2013-05-09 11:54:43','2013-05-08 15:39:05','127.0.0.1','127.0.0.1','2013-04-16 12:21:33','2013-05-09 11:54:43'),(2,'nutriendo@gmail.com','$2a$10$.qfYnkJ7agEllxlp7ZGAp.YGNr7OxII3N1ZS3Vnal.gS68nSjwT7C',NULL,NULL,NULL,5,'2013-05-08 16:29:41','2013-05-08 15:37:15','127.0.0.1','127.0.0.1','2013-05-06 13:41:30','2013-05-08 16:29:41'),(3,'delegado@gmail.com','$2a$10$eVlNBQP9nFanFRaZPWMgue42cbk3AJ0QCmY1g1fHctmIQo8xMgCHe',NULL,NULL,NULL,9,'2013-05-09 11:55:14','2013-05-08 16:01:45','127.0.0.1','127.0.0.1','2013-05-08 15:26:04','2013-05-09 11:55:14'),(4,'bienes@gmail.com','$2a$10$KTwdtghvm5CpetkB0sWE7uG3rRtYt2sXoGkHU42SfWBETC7WfiC2O',NULL,NULL,NULL,2,'2013-05-09 13:22:51','2013-05-09 13:21:38','127.0.0.1','127.0.0.1','2013-05-09 13:21:18','2013-05-09 13:22:51');
+INSERT INTO `users` VALUES (1,'juan.ca.rom@gmail.com','$2a$10$AXOaPYfGIiAkKdC2v5ZsnOwnnNOECxSNlTmiiPhVu6HAfc97A6gKK',NULL,NULL,NULL,4,'2013-05-02 15:34:38','2013-04-23 14:42:48','127.0.0.1','127.0.0.1','2013-04-18 15:37:20','2013-05-02 15:34:38');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -495,4 +495,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-05-09 11:57:53
+-- Dump completed on 2013-05-30  9:07:10
