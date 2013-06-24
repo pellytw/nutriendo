@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.1.54, for debian-linux-gnu (x86_64)
+-- MySQL dump 10.13  Distrib 5.5.29, for debian-linux-gnu (i686)
 --
 -- Host: localhost    Database: nutriendo
 -- ------------------------------------------------------
--- Server version	5.1.54-1ubuntu4
+-- Server version	5.5.29-0ubuntu0.12.04.1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -332,7 +332,7 @@ CREATE TABLE `roles` (
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -341,7 +341,7 @@ CREATE TABLE `roles` (
 
 LOCK TABLES `roles` WRITE;
 /*!40000 ALTER TABLE `roles` DISABLE KEYS */;
-INSERT INTO `roles` VALUES (1,'admin','2013-04-18 15:36:53','2013-04-18 15:36:53');
+INSERT INTO `roles` VALUES (1,'admin','2013-04-18 15:36:53','2013-04-18 15:36:53'),(2,'nutriendo','2013-06-24 12:09:41','2013-06-24 12:09:41'),(3,'delegado','2013-06-24 12:09:53','2013-06-24 12:09:53'),(4,'bienes','2013-06-24 12:10:03','2013-06-24 12:10:03'),(5,'compras','2013-06-24 12:10:14','2013-06-24 12:10:14'),(6,'subsecretario','2013-06-24 12:10:24','2013-06-24 12:10:24');
 /*!40000 ALTER TABLE `roles` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -436,7 +436,7 @@ CREATE TABLE `user_roles` (
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -445,7 +445,7 @@ CREATE TABLE `user_roles` (
 
 LOCK TABLES `user_roles` WRITE;
 /*!40000 ALTER TABLE `user_roles` DISABLE KEYS */;
-INSERT INTO `user_roles` VALUES (1,1,1,'2013-04-18 15:37:20','2013-04-18 15:37:20');
+INSERT INTO `user_roles` VALUES (1,1,1,'2013-04-18 15:37:20','2013-04-18 15:37:20'),(2,3,1,'2013-06-24 12:07:47','2013-06-24 12:07:47');
 /*!40000 ALTER TABLE `user_roles` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -473,7 +473,7 @@ CREATE TABLE `users` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_users_on_email` (`email`),
   UNIQUE KEY `index_users_on_reset_password_token` (`reset_password_token`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -482,7 +482,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'juan.ca.rom@gmail.com','$2a$10$AXOaPYfGIiAkKdC2v5ZsnOwnnNOECxSNlTmiiPhVu6HAfc97A6gKK',NULL,NULL,NULL,4,'2013-05-02 15:34:38','2013-04-23 14:42:48','127.0.0.1','127.0.0.1','2013-04-18 15:37:20','2013-05-02 15:34:38');
+INSERT INTO `users` VALUES (1,'juan.ca.rom@gmail.com','$2a$10$AXOaPYfGIiAkKdC2v5ZsnOwnnNOECxSNlTmiiPhVu6HAfc97A6gKK',NULL,NULL,NULL,5,'2013-06-24 12:07:29','2013-05-02 15:34:38','127.0.0.1','127.0.0.1','2013-04-18 15:37:20','2013-06-24 12:07:29'),(2,'prueba@gmail.com','$2a$10$5AKVJM.TXWfb19xrpOLAPOXyqgZ3Ay7jPc96VUGDL0GfF5xkFYJd.',NULL,NULL,NULL,1,'2013-06-24 12:02:44','2013-06-24 12:02:44','127.0.0.1','127.0.0.1','2013-06-24 12:02:44','2013-06-24 12:02:44'),(3,'pelly87@hotmail.com','$2a$10$PHy7UyPvgKlOiBuCVhM.HunYTmXUF5gUUpplRG0AEHVO/Su/yYtFm',NULL,NULL,NULL,2,'2013-06-24 12:07:56','2013-06-24 12:05:33','127.0.0.1','127.0.0.1','2013-06-24 12:05:33','2013-06-24 12:07:56');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -495,4 +495,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-05-30  9:07:10
+-- Dump completed on 2013-06-24  9:12:44
