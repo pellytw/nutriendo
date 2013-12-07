@@ -1,4 +1,6 @@
 Mysecurity::Application.routes.draw do
+scope "soft/nutriendo" do
+
   resources :inventario_menajes
 
   resources :inventario_equipamientos
@@ -103,4 +105,5 @@ Mysecurity::Application.routes.draw do
 
   root :to => "escuelas#index"
 
+end
 end
